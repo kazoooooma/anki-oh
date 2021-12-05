@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>暗記王</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<header>
+<p id="header">
+    <img src="./img/title.png" alt="" height=100px>
+</p>
+</header>
+<p id="header-info">
+    以下の入力欄に暗記した項目を記入し、追加していこう
+</p>
+<main>
+    <!-- <input type="text" id="key"> -->
+    <p><textarea id="memo"></textarea></p>
+    <p>
+        <button class="levelbutton" id="save">回答追加</button>
+        <button class="levelbutton" id="clear">全クリア</button>
+    </p>
+
+</main>
+<table id="playeranswer">
+<!-- ここに追加データが挿入される -->
+</table>
+
+<p><button class="levelbutton" id="getanswer">回答を表示</button></p>
+
+<table id="answer">
+    <!-- ここに追加データが挿入される -->
+    </table>
+
+<p id="score"></p>
+
+<!-- <input type="text" value="red" id="text1" maxlength="5" /> -->
+
+<script>
+
+//1.Save クリックイベント
+$('#save').on('click', function(){
+//valで値を取得する(jQuery)
+// const key = $('#key').val(); 
+const value = $('#memo').val();    
+// setItemでローカルストレージにデータを登録
+// localStorage.setItem(key, value);
+// trで表の行(table row)、thはヘッダー、tdはデータ
+// const html = '<tr><th>'+key+'</th></tr>';
+const html = '<tr><td>'+value+'</td></tr>';
+// appendでリストに追加
+$("#playeranswer").append(html);
+});
+
+// const t1 = document.getElementById("text1").value;
+// if(t1 == )
+
+// let answer = $('table#answer td#').text();
+// if()
+
+$('#getanswer').on('click', function(){
+for(let i =0; i < localStorage.length; i++){
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    const html = '<tr><td>'+value+'</td></tr>';
+    $("#answer").append(html);
+}
+
+let row = playeranswer.rows.length;
+let tableElem = document.getElementById('playeranswer');
+let rowElems = tableElem.row;
+let score = 0;
+for (let row of tableElem.rows) {
+    for(let cell of row.cells){
+    for(let j =0; j < localStorage.length; j++){
+    const key = localStorage.key(j);
+    const value = localStorage.getItem(key);
+    if(cell.innerText == value)
+    score = score+1;
+    //    console.log(cell.innerText);
+}
+}
+// for(let i =0; i < row; i++){
+// }
+}
+console.log(score);
+$('#score').html('点数は'+score+'点です');
+});
+
+
+//2.clear クリックイベント
+$('#clear').on('click', function(){
+    // localStorage.clear();
+    // emptyでリストを空に
+    // $('#answer').empty();
+    $('#playeranswer').empty();
+});
+
+
+
+// //3.ページ読み込み：保存データ取得表示
+// for(let i =0; i < localStorage.length; i++){
+//     const key = localStorage.key(i);
+//     const value = localStorage.getItem(key);
+//     const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
+//     $("#list").append(html);
+// }
+
+
+// //1.Save クリックイベント
+// $('#save').on('click', function(){
+// //valで値を取得する(jQuery)
+// const key = $('#key').val(); 
+// const value = $('#memo').val();    
+// // setItemでローカルストレージにデータを登録
+// localStorage.setItem(key, value);
+// // trで表の行(table row)、thはヘッダー、tdはデータ
+// const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
+// // appendでリストに追加
+// $("#list").append(html);
+// });
+
+
+// //2.clear クリックイベント
+// $('#clear').on('click', function(){
+//     localStorage.clear();
+//     // emptyでリストを空に
+//     $('#list').empty();
+// });
+
+
+// //3.ページ読み込み：保存データ取得表示
+// for(let i =0; i < localStorage.length; i++){
+//     const key = localStorage.key(i);
+//     const value = localStorage.getItem(key);
+//     const html = '<tr><th>'+key+'</th><td>'+value+'</td></tr>';
+//     $("#list").append(html);
+// }
+
+</script>
+
+<footer>
+</footer>
+</body>
+</html>

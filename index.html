@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>暗記王</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+<header>
+<p id="header">
+    <img src="./img/title.png" alt="" height=100px>
+</p>
+</header>
+<p id="header-info">
+    レベルを選択し、表示される文字列を時間内に全て暗記せよ
+</p>
+
+<p>
+    <button class="levelbutton" id="easy">初級</button>
+    <button class="levelbutton" id="normal">中級</button>
+    <button class="levelbutton" id="hard">上級</button>
+</p>
+
+<p id="listtitle"></p>
+
+<table id="list">
+    <tr><td id="1stdata"></td></tr>
+    <tr><td id="2nddata"></td></tr>
+    <tr><td id="3rddata"></td></tr>
+    <tr><td id="4thdata"></td></tr>
+    <tr><td id="5thdata"></td></tr>
+    <tr><td id="6thdata"></td></tr>
+    <tr><td id="7thdata"></td></tr>
+    <tr><td id="8thdata"></td></tr>
+    <tr><td id="9thdata"></td></tr>
+    <tr><td id="10thdata"></td></tr>
+
+</table>
+<p id="linktopage">
+<a href="./game.html">制限時間を待たずに回答する</a>
+</p>
+<main>
+
+</main>
+
+<script>
+
+$('#easy').on('click', function(){
+    $('#listtitle').html('世界4大文明');
+    localStorage.clear();
+    $('#list').empty();
+    // $('td').addClass('.addborder');
+
+    $('#1stdata').html('メソポタミア文明');
+    let key = 1;
+    let value = 'メソポタミア文明';
+    console.log(value);
+    localStorage.setItem(key, value);
+
+    $('#2nddata').html('エジプト文明');
+    let key2 = 2;
+    let value2 = 'エジプト文明';
+    console.log(value2);
+    localStorage.setItem(key2, value2);
+
+    $('#3rddata').html('インダス文明');
+    let key3 = 3;
+    let value3 = 'インダス文明';
+    console.log(value3);
+    localStorage.setItem(key3, value3);
+
+    $('#4thdata').html('黄河文明');
+    let key4 = 4;
+    let value4 = '黄河文明';
+    console.log(value4);
+    localStorage.setItem(key4, value4);
+
+    for(let i=0; i<localStorage.length; i++){
+    const key   = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    const html = '<tr><td>'+value+'</td></tr>';
+    $("#list").append(html);
+}
+});
+
+$('#normal').on('click', function(){
+    $('#listtitle').html('七大陸最高峰');
+    localStorage.clear();
+    $('#list').empty();
+
+    $('#1stdata').html('エベレスト');
+    let key = 1
+    let value = 'エベレスト';
+    console.log(value);
+    localStorage.setItem(key, value);
+
+    $('#2nddata').html('エルブルス');
+    let key2 = 2
+    let value2 = 'エルブルス';
+    console.log(value2);
+    localStorage.setItem(key2, value2);
+
+    $('#3rddata').html('デナリ');
+    let key3 = 3
+    let value3 = 'デナリ';
+    console.log(value3);
+    localStorage.setItem(key3, value3);
+
+    $('#4thdata').html('アコンカグア');
+    let key4 = 4
+    let value4 = 'アコンカグア';
+    console.log(value4);
+    localStorage.setItem(key4, value4);
+
+    $('#5thdata').html('キリマンジャロ');
+    let key5 = 5
+    let value5 = 'キリマンジャロ';
+    console.log(value5);
+    localStorage.setItem(key5, value5);
+
+    $('#6thdata').html('コジオスコ');
+    let key6 = 6
+    let value6 = 'コジオスコ';
+    console.log(value6);
+    localStorage.setItem(key6, value6);
+
+    $('#7thdata').html('ヴィンソン・マシフ');
+    let key7 = 7
+    let value7 = 'ヴィンソン・マシフ';
+    console.log(value7);
+    localStorage.setItem(key7, value7);
+
+    for(let i=0; i<localStorage.length; i++){
+    const key   = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    const html = '<tr><td>'+value+'</td></tr>';
+    $("#list").append(html);
+}
+});
+
+$('#hard').on('click', function(){
+    $('#listtitle').html('権威ある世界の映画祭');
+    localStorage.clear();
+    $('#list').empty();
+
+    $('#1stdata').html('ヴェネツィア国際映画祭');
+    let key = 1
+    let value = 'ヴェネツィア国際映画祭';
+    console.log(value);
+    localStorage.setItem(key, value);
+
+    $('#2nddata').html('カンヌ国際映画祭');
+    let key2 = 2
+    let value2 = 'カンヌ国際映画祭';
+    console.log(value2);
+    localStorage.setItem(key2, value2);
+
+    $('#3rddata').html('トロント国際映画祭');
+    let key3 = 3
+    let value3 = 'トロント国際映画祭';
+    console.log(value3);
+    localStorage.setItem(key3, value3);
+
+    $('#4thdata').html('サンダンス映画祭');
+    let key4 = 4
+    let value4 = 'サンダンス映画祭';
+    console.log(value4);
+    localStorage.setItem(key4, value4);
+
+    $('#5thdata').html('アヌシー国際アニメーション映画祭');
+    let key5 = 5
+    let value5 = 'アヌシー国際アニメーション映画祭';
+    console.log(value5);
+    localStorage.setItem(key5, value5);
+
+    $('#6thdata').html('香港国際映画祭');
+    let key6 = 6
+    let value6 = '香港国際映画祭';
+    console.log(value6);
+    localStorage.setItem(key6, value6);
+
+    $('#7thdata').html('ベルリン国際映画祭');
+    let key7 = 7
+    let value7 = 'ベルリン国際映画祭';
+    console.log(value7);
+    localStorage.setItem(key7, value7);
+
+    $('#8thdata').html('メルボルン国際映画祭');
+    let key8 = 8
+    let value8 = 'メルボルン国際映画祭';
+    console.log(value8);
+    localStorage.setItem(key8, value8);
+
+    $('#9thdata').html('サンフランシスコ国際映画祭');
+    let key9 = 9
+    let value9 = 'サンフランシスコ国際映画祭';
+    console.log(value9);
+    localStorage.setItem(key9, value9);
+
+    $('#10thdata').html('レインダンス映画祭');
+    let key10 = 10
+    let value10 = 'レインダンス映画祭';
+    console.log(value10);
+    localStorage.setItem(key10, value10);
+
+    for(let i=0; i<localStorage.length; i++){
+    const key   = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    const html = '<tr><td>'+value+'</td></tr>';
+    $("#list").append(html);
+}
+});
+
+</script>
+
+<footer>
+</footer>
+
+</body>
+</html>
